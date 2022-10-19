@@ -1,12 +1,15 @@
 import exampleVideoData from '/src/data/exampleVideoData.js';
 import VideoList from './VideoList.js';
+import VideoPlayer from './VideoPlayer.js';
 
 
 var App = (props) => {
-  var video = exampleVideoData;
+  var data = exampleVideoData;
+
   return (
     <>
-      <VideoList videos={video} />
+      <VideoPlayer video = {data[0]}/>
+      <VideoList videos={data} />
     </>
   );
 };
