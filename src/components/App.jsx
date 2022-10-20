@@ -1,6 +1,8 @@
 import exampleVideoData from '/src/data/exampleVideoData.js';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
+import {API_KEY, YOUTUBE_API_KEY} from '/src/config/config.js';
+
 
 const { useState } = React;
 
