@@ -2,14 +2,28 @@ import exampleVideoData from '/src/data/exampleVideoData.js';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
 
+const { useState } = React;
+
+
+
+
 
 var App = (props) => {
+
+  const [videoData, setVideoData] = useState(exampleVideoData);
+
+  const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
+
+  const clickHandler = (video) => {
+    console.log('clicked');
+    return (setSelectedVideo(video));
+  };
   var data = exampleVideoData;
 
   return (
     <>
-      <VideoPlayer video = {data[0]}/>
-      <VideoList videos={data} />
+      <VideoPlayer video={selectedVideo} />
+      <VideoList videos={videoData} clickHandler={clickHandler} />
     </>
   );
 };
