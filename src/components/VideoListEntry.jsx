@@ -1,7 +1,7 @@
 var VideoListEntry = (props) => {
 
   //console.log(props.data);
-  console.log(props.video.snippet.title);
+
   return (
     <div className="video-list-entry media">
       <div className="media-left media-middle">

@@ -13,9 +13,14 @@ var getURLSearchParams = function(url) {
 };
 
 var hasSameShape = function(objectOne, objectTwo) {
+  console.log(objectOne, 'objectone')
+  console.log(objectTwo, 'objecttwo');
+
   if (Object.keys(objectOne).length !== Object.keys(objectTwo).length) {
     return false;
   }
+
+
 
   for (var key in objectOne) {
     if (!key in objectTwo) {
@@ -30,6 +35,7 @@ var hasSameShape = function(objectOne, objectTwo) {
       return hasSameShape(objectOne[key], objectTwo[key]);
     }
   }
+
 
   return true;
 };
