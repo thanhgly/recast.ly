@@ -4,7 +4,13 @@ $.ajaxPrefilter(function (settings, _, jqXHR) {
   jqXHR.setRequestHeader('Authorization', API_KEY);
 });
 
+
+
+
 var searchYouTube = (query, callback) => {
+
+
+
   // TODO
 
   $.ajax({
@@ -14,13 +20,14 @@ var searchYouTube = (query, callback) => {
     data: {
       key: YOUTUBE_API_KEY,
       q: query,
-      part: 'snippet',
-      type: 'video',
+
     },
-    success: function (data) {
+    success: (data) => {
       console.log('Successful Fetch');
-      callback(data);
+      console.log(data, 'data');
       console.log('callBack called');
+      callback(data);
+
     },
     error: function(response) {
       console.log('Request Failed');

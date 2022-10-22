@@ -20,8 +20,6 @@ var hasSameShape = function(objectOne, objectTwo) {
     return false;
   }
 
-
-
   for (var key in objectOne) {
     if (!key in objectTwo) {
       return false;
