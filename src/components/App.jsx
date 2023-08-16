@@ -1,10 +1,12 @@
 import data from '../data/exampleVideoData.js';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
+const { useState } = React;
 
 var App = () => {
-  // const [video, setVideo] = useState(data[0]);
-  const video = data[0];
+  const [videos, setVideos] = useState(data);
+  const [video, setVideo] = useState(data[0]);
+
   return (
     <div>
       <nav className="navbar">
@@ -24,7 +26,7 @@ var App = () => {
         </div>
         <div className="col-md-5">
           <div>
-            <VideoList videos={data} />
+            <VideoList videos={videos} setVideo={setVideo} />
           </div>
         </div>
       </div>

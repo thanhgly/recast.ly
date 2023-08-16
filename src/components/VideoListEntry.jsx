@@ -1,8 +1,8 @@
-var VideoListEntry = ({ video }) => {
+var VideoListEntry = ({ video, setVideo }) => {
   const { thumbnails, title, description } = video.snippet;
 
   return (
-    <div className="video-list-entry media">
+    <div className="video-list-entry media" onClick={() => setVideo(video)}>
       <div className="media-left media-middle">
         <img
           className="media-object"
