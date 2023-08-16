@@ -1,5 +1,4 @@
 var VideoListEntry = ({ video }) => {
-  console.log(video);
   const { thumbnails, title, description } = video.snippet;
 
   return (
