@@ -1,6 +1,5 @@
 var VideoPlayer = ({ video }) => {
-  const { id, snippet } = video;
-  const src = `https://www.youtube.com/embed/${id.videoId}`;
+  const src = `https://www.youtube.com/embed/${video.id.videoId}`;
   return (
     <div className="video-player">
       <div className="embed-responsive embed-responsive-16by9">
@@ -11,8 +10,8 @@ var VideoPlayer = ({ video }) => {
         ></iframe>
       </div>
       <div className="video-player-details">
-        <h3>{snippet.title}</h3>
-        <div>{snippet.description}</div>
+        <h3>{video.snippet.title}</h3>
+        <div>{video.snippet.description}</div>
       </div>
     </div>
   );

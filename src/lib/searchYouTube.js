@@ -8,6 +8,8 @@ var searchYouTube = (query, callback) => {
   const url = 'https://app-hrsei-api.herokuapp.com/api/recastly/videos';
   $.get(url, { q: query }, (data) => {
     callback(data);
+  }).fail((err) => {
+    console.error('Search failed', `endpoint: ${url}`, `query: ${query}`);
   });
 };
 

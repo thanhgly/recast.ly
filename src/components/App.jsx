@@ -1,11 +1,27 @@
 import data from '../data/exampleVideoData.js';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
-const { useState } = React;
+import search from '../lib/searchYoutube.js';
+const { useState, useEffect } = React;
 
 var App = () => {
-  const [videos, setVideos] = useState(data);
-  const [video, setVideo] = useState(data[0]);
+  const [videos, setVideos] = useState([]);
+  const [video, setVideo] = useState(videos[0] || data[0]);
+
+  const fetchVideos = (query = '') => {
+    search(query, (results) => {
+      setVideos(results);
+      setVideo(results[0]);
+    });
+  };
+
+  useEffect(() => {
+    fetchVideos();
+  }, []);
+
+  // if (!videos || !video) {
+  //   return <h1>Loading</h1>;
+  // }
 
   return (
     <div>
