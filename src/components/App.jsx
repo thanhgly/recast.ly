@@ -1,6 +1,7 @@
 import data from '../data/exampleVideoData.js';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
+import Search from './Search.js';
 import search from '../lib/searchYoutube.js';
 const { useState, useEffect } = React;
 
@@ -28,9 +29,7 @@ var App = () => {
       <nav className="navbar">
         <div className="col-md-6 offset-md-3">
           <div>
-            <h5>
-              <em>search</em> view goes here
-            </h5>
+            <Search fetchVideos={fetchVideos} />
           </div>
         </div>
       </nav>
