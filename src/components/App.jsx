@@ -2,6 +2,7 @@ import data from '../data/exampleVideoData.js';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
 import Search from './Search.js';
+import VideoDetails from './VideoDetails.js';
 import search from '../lib/searchYoutube.js';
 const { useState, useEffect } = React;
 
@@ -28,21 +29,16 @@ var App = () => {
     <div>
       <nav className="navbar">
         <div className="col-md-6 offset-md-3">
-          <div>
-            <Search fetchVideos={fetchVideos} />
-          </div>
+          <Search fetchVideos={fetchVideos} />
         </div>
       </nav>
       <div className="row">
         <div className="col-md-7">
-          <div>
-            <VideoPlayer video={video} />
-          </div>
+          <VideoPlayer video={video} />
+          <VideoDetails video={video} />
         </div>
         <div className="col-md-5">
-          <div>
-            <VideoList videos={videos} setVideo={setVideo} />
-          </div>
+          <VideoList videos={videos} setVideo={setVideo} />
         </div>
       </div>
     </div>
@@ -50,4 +46,5 @@ var App = () => {
 };
 // In the ES6 spec, files are "modules" and do not share a top-level scope
 // `var` declarations will only exist globally where explicitly defined
+
 export default App;

@@ -7,7 +7,7 @@ var Search = ({ fetchVideos }) => {
     const debouce = setTimeout(() => {
       fetchVideos(term);
     }, 500);
-    // return () => clearTimeout(debouce);
+    return () => clearTimeout(debouce);
   }, [term]);
 
   return (
